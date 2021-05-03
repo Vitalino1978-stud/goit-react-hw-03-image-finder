@@ -1,9 +1,16 @@
+import PropTypes from 'prop-types';
+
 const ImageGalleryItem = ({ url, alt }) => {
 	return (
-		<img src={url} alt={alt} className="ImageGalleryItem-image"/>
+		<img src={url}
+		alt={alt} className="ImageGalleryItem-image" />
 	 );
 }
 
-// треба зробити проптайпс ы перевырку проптайпс
+ImageGalleryItem.propTypes = {
+	url: PropTypes.string.isRequired,
+	alt: PropTypes.string.isRequired,
+}
  
 export default ImageGalleryItem;
+

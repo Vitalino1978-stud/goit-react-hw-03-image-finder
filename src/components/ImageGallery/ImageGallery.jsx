@@ -1,15 +1,23 @@
 import ImageGalleryItem from '../ImageGalleryItem'
-const ImageGallery = ({ pictures }) => {
+
+const ImageGallery = ({ pictures, openModal }) => {
 
 	return (
+		<>
 		<ul className="ImageGallery">
-			{pictures.map(({ id, webformatURL, tags }) => (
-				<li className="ImageGalleryItem" key={id}>
-					<ImageGalleryItem url={webformatURL} alt={ tags}/>
+				{pictures.map(({ id, webformatURL, tags, largeImageURL }) => {
+				
+				return (
+				<li className="ImageGalleryItem" key={id} onClick={() => openModal(largeImageURL) }>
+					<ImageGalleryItem url={webformatURL} alt={tags} />
 				</li>
-			))}	
+			)
+			})}	
   
 		</ul>
+			
+			{/* <button type='button' onClick={this.fetchPictures}>Load more</button> */}
+			</>
 	);
 }
  
