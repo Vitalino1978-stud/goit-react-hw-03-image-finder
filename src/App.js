@@ -26,7 +26,11 @@ class App extends Component {
   }
 
   onChangeQuery = query => {
-    this.setState({ searchQuery: query, currentPage: 1, pictures: [] });
+    this.setState({
+      searchQuery: query,
+      currentPage: 1,
+      pictures: [],
+    });
   };
 
   fetchPictures = () => {
@@ -46,7 +50,7 @@ class App extends Component {
       .catch(error => console.log(error))
       .finally(() => {
         this.setState({ isLoading: false });
-        if (currentPage > 2) {
+        if (currentPage > 1) {
           window.scrollTo({
             top: document.documentElement.scrollHeight,
             behavior: 'smooth',
